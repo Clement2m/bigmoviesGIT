@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page d'un film{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset("css/film.css") }}" />
+    <link href="{{ asset("css/bootstrap-grid.css") }}" type="text/css" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+    <header>
+        <h1>Header à inclure</h1>
+    </header>
+
+    <div class="container">
+        <h1>{{ film.nomFilm }}</h1>
+
+        <div class="row">
+
+            <div class="col-lg-4">
+                <img src="{{ asset(film.affiche) }}" alt="{{ film.nomFilm }}" width="216" height="288" />
+            </div>
+
+            <div class="col-lg-8">
+                <p><b>Date de sortie : </b>{{ film.dateSortie|date('d-m-Y') }}</p>
+                <p><b>Réalisateur : </b>{{ film.realisateur }}</p>
+                <p><b>Genres : </b>{{ film.genre }}</p>
+                <p>[[[Système de notation à créer]]]</p>
+            </div>
+        </div>
+
+        <hr/>
+
+        <div>
+            <div>
+                <h1>Synopsis</h1>
+                <p>{{ film.synopsis }}</p>
+            </div>
+        </div>
+
+        <hr/>
+
+        <h1>Critiques des membres</h1>
+
+        <a href="{{ path("film_ajout_critique", {"nom_film": film.nomFilm})}}">Ajouter une critique</a>
+
+        <div class="row">
+            {% for critique in critiques %}
+                {% if critique.film.nomFilm == film.nomFilm %}
+                <div class="col-lg-6">
+                    <h3>{{ critique.nameUser }}</h3>
+                    <p>
+                        {{ critique.texteCritique }} <br />
+                        <small>{{ critique.createAt|date('d-m-Y') }}</small>
+                        <small>{{ critique.film.nomFilm }}</small>
+                        <small><a href="{{ path("film_modifier_critique", { id : critique.id})}}">Modifier</a></small>
+                        <small><a href="{{ path("film_supprimer_critique", {"id": critique.id})}}">Supprimer</a></small>
+                    </p>
+                </div>
+                {% endif %}
+            {% endfor %}
+
+        </div>
+    </div>
+
+    <footer>
+        <h1>Footer à inclure</h1>
+    </footer>
+{% endblock %}
+

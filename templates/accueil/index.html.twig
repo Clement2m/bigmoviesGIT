@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bienvenue sur BigMovies !{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset("css/film.css") }}" />
+    <link href="{{ asset("css/bootstrap-grid.css") }}" type="text/css" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+
+    <header>
+        <h1>Header à inclure</h1>
+    </header>
+
+    <div class="container">
+
+        <p>Bienvenue sur BigMovies</p>
+
+        [[[ Page d'accueil à inclure ]]]
+
+        <div>
+            <a href="{{ path("film_index", {"nom_film":"Retour_vers_le_futur"}) }}">Aller sur la page du Film Retour vers le futur</a>
+            <a href="{{ path("film_index", {"nom_film":"Les_Affranchis"}) }}">Aller sur la page du Film Les Affranchis</a>
+        </div>
+    </div>
+
+    <footer>
+        <h1>Footer à inclure</h1>
+    </footer>
+{% endblock %}

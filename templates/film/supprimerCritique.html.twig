@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page d'un film{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset("css/film.css") }}" />
+    <link href="{{ asset("css/bootstrap-grid.css") }}" type="text/css" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+    <header>
+        <h1>Header à inclure</h1>
+    </header>
+
+    <div class="container">
+        <!-- <a href="{{ path("film_index") }}">Retour</a> renvoie une erreur car il ne sait pas quel film afficher... -->
+        <h1>Supprimer la critique</h1>
+
+    </div>
+
+    <footer>
+        <h1>Footer à inclure</h1>
+    </footer>
+{% endblock %}
+

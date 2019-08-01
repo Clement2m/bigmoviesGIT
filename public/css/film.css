@@ -1,0 +1,32 @@
+body { 
+    background-color: #03658C;
+}
+
+div, header, footer {
+    /*border : 1px solid black;*/
+    text-align: center;
+    color: #2E3640;
+}
+
+img {
+    margin: auto;
+}
+
+.container {
+    background-color: #F2E4C9;
+    border-radius: 15px;
+}
+
+hr {
+    color: #2E3640;
+}
+
+/* Color Theme Swatches in Hex */
+.Illustration-1-hex { color: #03658C; }
+.Illustration-2-hex { color: #049DBF; }
+.Illustration-3-hex { color: #04C4D9; }
+.Illustration-4-hex { color: #F2E4C9; }
+.Illustration-5-hex { color: #BFAB93; }
+.Illustration-5-hex { color: #BFAB93; }
+.Illustration-5-hex { color: #2E3640; }
+.Illustration-5-hex { color: #0B0D0C; }
